@@ -1,0 +1,298 @@
+
+MainWindow, Updater, Repair, PreInitializeError{
+    -fx-background-color: #1e1e1e;
+}
+
+.toast-info{
+    -fx-fill: white;
+    -fx-background-color: #121111;
+}
+
+.toast-error{
+    -fx-fill: black;
+    -fx-font-weight: bold;
+    -fx-background-color: #a70909;
+}
+
+.toast-warning{
+    -fx-fill: black;
+    -fx-background-color: #9ca709;
+}
+
+.toast-success{
+    -fx-fill: black;
+    -fx-background-color: #03ef07;
+}
+
+
+.fx-haevn-titledpane .title
+{
+    -fx-background-color: -fx-base-secondary-background;
+    -fx-font-size: 16;
+}
+
+
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color:-fx-base-secondary-background;
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 11px 0 0;
+    -fx-padding: 0 0 5px 0;
+}
+
+.table-view .column-header {
+     -fx-background-color: transparent;
+ }
+
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+.table-row-cell:hover {
+    -fx-scale-y: 1.05;
+    -fx-scale-x: 1.05;
+}
+.table-row-cell:odd{
+    -fx-background-color:-fx-secondary-color;
+    -fx-text-background-color:-fx-primary-font-color;
+}
+.table-row-cell:even{
+    -fx-background-color:-fx-primary-color;
+    -fx-text-background-color:-fx-primary-font-color;
+}
+
+.menu-bar{
+    -fx-background-color: -fx-base-secondary-background;
+}
+
+.menu-bar .menu-item{
+    -fx-background-color: -fx-base-secondary-background;
+    -fx-text-fill: -fx-primary-font-color;
+}
+
+.menu-bar .menu-item:focused{
+    -fx-background-color: -fx-base-secondary-background;
+    -fx-text-fill: -fx-primary-font-color;
+}
+
+.menu-bar .menu-item:hover{
+    -fx-background-color: -fx-base-secondary-background;
+    -fx-text-fill: -fx-primary-font-color;
+}
+
+.menu .menu-item:hover{
+    -fx-background-color: -fx-base-secondary-background;
+    -fx-text-fill: -fx-primary-font-color;
+}
+
+A, H1, H2, H3, H4, H5, AH1, AH2, AH3, AH4, AH5 {
+    -fx-text-fill: -fx-primary-font-color;
+}
+
+/* Font */
+RefreshButton, ReadOnlyBox, ErrorLabel, TextField,
+A, Label, Button,
+.list-cell, .combo-box-base, .date-picker {
+    -fx-font-size: 14;
+}
+
+#base_padding{
+    -fx-padding: 10;
+}
+
+VBox, HBox, BorderPane, GridPane,PaneWrapper, FlowPane{
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-hgap:10;
+    -fx-vgap: 10;
+}
+
+
+Button:hover{
+    -fx-scale-y: 1.01;
+    -fx-scale-x: 1.01;
+}
+
+
+Button:pressed {
+    -fx-scale-y: 0.9;
+    -fx-scale-x: 0.9;
+}
+
+.list-view{
+    -fx-background-insets: 0;
+    -fx-min-width:100;
+    -fx-max-width:300;
+    -fx-background-color: transparent;
+}
+
+ScrollPane{
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+}
+
+
+
+
+/* Coloring */
+
+RefreshButton, DatePicker,
+A, Label, CheckBox, RadioButton{
+    -fx-text-fill: -fx-primary-font-color;
+}
+
+.combo-box .list-cell{
+    -fx-text-fill: -fx-secondary-font-color;
+}
+
+
+
+.base_layer_background{
+    -fx-background-color: #333131;
+}
+
+
+
+#buttonbar-vertical, #buttonbar-horizontal{}
+
+
+
+OverviewView{
+    -fx-alignment: TOP-CENTER;
+}
+
+
+
+
+/* Button */
+
+Button{
+    -fx-text-fill: -fx-secondary-font-color;
+    -fx-background-color: -fx-primary-color;
+}
+
+Button:hover{
+    -fx-background-color: -fx-secondary-color;
+}
+
+
+/* Titled pane*/
+
+TitledPane{
+    -fx-background-color: #333131;
+}
+
+.titled-pane {
+    -fx-text-fill: -fx-secondary-font-color;
+}
+
+.titled-pane:focused {
+    -fx-text-fill: -fx-secondary-font-color;
+}
+
+.titled-pane > .title {
+    -fx-background-color: -fx-primary-color;
+}
+
+.titled-pane > *.content {
+    -fx-background-color: #2b2b2b;
+    -fx-box-border: transparent;
+}
+
+
+/* Tab pane*/
+
+.tab {
+    -fx-background-color: transparent;
+}
+
+.tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: -fx-secondary-font-color;
+    -fx-padding: 0 10 0 10;
+}
+
+.tab:selected {
+    -fx-background-color: -fx-secondary-color;
+    -fx-font-weight: bold;
+}
+
+.tab-header-background {
+    -fx-background-color: -fx-primary-color;
+}
+
+
+/* Listview */
+
+.list-cell{
+    -fx-background-color: -fx-base-primary-background;
+    -fx-text-fill: -fx-primary-font-color;
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: -fx-primary-font-color;
+}
+
+.list-cell:filled:hover {
+    -fx-scale-y: 1.05;
+    -fx-scale-x: 1.05;
+}
+
+.list-cell:empty {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-primary-font-color;
+}
+
+.text-field{
+    -fx-background-color: -fx-base-primary-background;
+    -fx-text-fill: -fx-primary-font-color;
+
+    -fx-box-border: transparent;
+}
+
+.text-area {
+    -fx-text-fill: -fx-primary-font-color;
+    -fx-display-caret:true;
+}
+
+.text-area .content {
+    -fx-background-color:  -fx-base-primary-background;
+}
+
+
+/* Datepicker */
+
+.date-picker .arrow-button .arrow, .date-picker .cell {
+    -fx-background-color: -fx-base-primary-background;
+    -fx-text-fill: -fx-primary-font-color;
+}
+
+.date-picker .selected {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: -fx-primary-font-color;
+}
+
+.date-picker-popup  {
+    -fx-border-color: transparent;
+    -fx-background-color: -fx-base-primary-background;
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: -fx-primary-color;
+}
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: -fx-secondary-font-color;
+}
+
+.date-picker-popup .spinner .button .left-arrow,
+.date-picker-popup .spinner .button .right-arrow {
+    -fx-background-color: -fx-base-primary-background;
+}

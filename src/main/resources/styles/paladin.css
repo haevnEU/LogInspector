@@ -1,0 +1,10 @@
+* {
+    -fx-primary-color: #F48CBA;
+    -fx-secondary-color: #da86ac;
+    -fx-base-primary-background:#353434;
+    -fx-base-secondary-background: #d3749f;
+
+    -fx-focus-color: -fx-secondary-color;
+    -fx-primary-font-color: white;
+    -fx-secondary-font-color: black;
+}
