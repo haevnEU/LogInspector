@@ -3,9 +3,8 @@ package ui;
 import core.Logic;
 import de.haevn.jfx.elements.Toast;
 import de.haevn.jfx.elements.menu.ClickableMenu;
-import de.haevn.jfx.tools.ElementGroup;
 import de.haevn.utils.AppLauncher;
-import de.haevn.utils.Core;
+import de.haevn.utils.StringUtils;
 import javafx.application.Application;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -59,14 +58,14 @@ public class UIMain extends Application {
         root.setStyle("-fx-background-color: #1e1e1e;");
 
 
-        table.addColumn("Date", p -> new SimpleStringProperty(Core.trimStringTo(p.getValue().date(), 64)))
-                .addColumn("Level", p -> new SimpleStringProperty(Core.trimStringTo(p.getValue().level(), 64)))
-                .addColumn("Source", p -> new SimpleStringProperty(Core.trimStringTo(p.getValue().source(), 64)))
-                .addColumn("Method", p -> new SimpleStringProperty(Core.trimStringTo(p.getValue().method(), 64)))
-                .addColumn("Thread", p -> new SimpleStringProperty(Core.trimStringTo(p.getValue().thread(), 64)))
-                .addColumn("Message", p -> new SimpleStringProperty(Core.trimStringTo(p.getValue().message(), 64)))
-                .addColumn("Object", p -> new SimpleStringProperty(Core.trimStringTo(p.getValue().object(), 64)))
-                .addColumn("Throwable", p -> new SimpleStringProperty(Core.splitSecure(p.getValue().throwable(),':')));
+        table.addColumn("Date", p -> new SimpleStringProperty(StringUtils.trimStringTo(p.getValue().date(), 64)))
+                .addColumn("Level", p -> new SimpleStringProperty(StringUtils.trimStringTo(p.getValue().level(), 64)))
+                .addColumn("Source", p -> new SimpleStringProperty(StringUtils.trimStringTo(p.getValue().source(), 64)))
+                .addColumn("Method", p -> new SimpleStringProperty(StringUtils.trimStringTo(p.getValue().method(), 64)))
+                .addColumn("Thread", p -> new SimpleStringProperty(StringUtils.trimStringTo(p.getValue().thread(), 64)))
+                .addColumn("Message", p -> new SimpleStringProperty(StringUtils.trimStringTo(p.getValue().message(), 64)))
+                .addColumn("Object", p -> new SimpleStringProperty(StringUtils.trimStringTo(p.getValue().object(), 64)))
+                .addColumn("Throwable", p -> new SimpleStringProperty(StringUtils.splitSecure(p.getValue().throwable(),0, ':')));
 
 
         table.addOnSelectItemChanged(EntryView::showEntry);
