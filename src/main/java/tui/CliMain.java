@@ -1,15 +1,5 @@
 package tui;
 
-import core.Logic;
-import de.haevn.utils.exceptions.ExceptionUtils;
-import de.haevn.utils.io.TUI;
-import de.haevn.utils.system.Tokenizer;
-import model.LogEntry;
-
-import java.io.*;
-import java.util.Objects;
-import java.util.Scanner;
-
 public class CliMain {
     public static void main(String[] args) {
         System.out.println("Welcome to the Log Analyzer!");
