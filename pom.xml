@@ -6,7 +6,7 @@
 
     <groupId>de.haevn</groupId>
     <artifactId>LogInspector</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.2</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -14,8 +14,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 
-        <version.haevn.utils>1.1.1</version.haevn.utils>
-        <version.haevn.jfx>1.1.1</version.haevn.jfx>
+        <version.haevn.utils>1.2</version.haevn.utils>
+        <version.haevn.jfx>1.2</version.haevn.jfx>
 
     </properties>
 

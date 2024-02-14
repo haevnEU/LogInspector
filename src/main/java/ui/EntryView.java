@@ -5,7 +5,7 @@ import de.haevn.jfx.tools.creation.elements.TextInputCreator;
 import de.haevn.jfx.tools.creation.pane.BorderPaneCreator;
 import de.haevn.jfx.tools.creation.pane.FormCreator;
 import de.haevn.jfx.tools.creation.pane.TabPaneCreator;
-import de.haevn.utils.Core;
+import de.haevn.utils.StringUtils;
 import javafx.scene.Scene;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -75,7 +75,7 @@ public class EntryView {
     }
 
     private void copy() {
-        Core.copyText(entry.toJson());
+        StringUtils.copyText(entry.toJson());
     }
 
     public void hide() {

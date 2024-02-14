@@ -17,12 +17,9 @@ public class Launcher extends AppLauncher {
 
     @Override
     public void setup(String... args) {
-        Arrays.stream(args).filter(arg -> arg.equalsIgnoreCase("--ui")).forEach(arg -> UIMain.main(args));
-        Arrays.stream(args).filter(arg -> arg.equalsIgnoreCase("--cli")).forEach(arg -> CliMain.main(args));
         super.enableDebug();
-        for (String arg : args) {
-            System.out.println(arg);
-        }
+        Arrays.stream(args).filter(arg -> arg.equalsIgnoreCase("--ui")).findAny().ifPresent(arg -> UIMain.main(args));
+        Arrays.stream(args).filter(arg -> arg.equalsIgnoreCase("--cli")).findAny().ifPresent(arg -> CliMain.main(args));
     }
 
     @Override
