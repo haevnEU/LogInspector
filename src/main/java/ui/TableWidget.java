@@ -2,7 +2,8 @@ package ui;
 
 
 import core.Logic;
-import de.haevn.jfx.html.H1;
+
+import de.haevn.jfx.html.H;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -29,7 +30,7 @@ public class TableWidget extends GridPane {
 
     private final StringProperty title = new SimpleStringProperty("N/A");
     public TableWidget(final ReadOnlyObjectProperty<Logic> logEntry) {
-        final H1 title = new H1("N/A");
+        final H title = H.ofH1("N/A");
         final Label summary = new Label("Nothing loaded");
         title.textProperty().bind(this.title);
         summary.textProperty().bind(this.summary);

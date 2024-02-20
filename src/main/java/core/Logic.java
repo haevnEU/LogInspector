@@ -1,6 +1,6 @@
 package core;
 
-import de.haevn.utils.system.Tokenizer;
+import de.haevn.utils.Tokenizer;
 import model.LogEntry;
 
 import java.io.File;
@@ -80,5 +80,14 @@ public class Logic {
 
     public boolean delete() {
         return file.delete();
+    }
+
+    public void reload() {
+        try {
+            // Add autoreload
+            load(file.getAbsolutePath());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

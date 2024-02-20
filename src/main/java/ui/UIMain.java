@@ -35,6 +35,9 @@ public class UIMain extends Application {
     final ClickableMenu menuOpen = new ClickableMenu("Open", openedFilesListWidget::openFiles);
     final ClickableMenu menuDelete = new ClickableMenu("Delete", this::delete).withDisabled();
     final ClickableMenu menuFilter = new ClickableMenu("Filter", this::filter).withDisabled();
+   final ClickableMenu menuReload = new ClickableMenu("Reload", this::reload).withDisabled();
+
+
     private final TableWidget table = new TableWidget(selectedItem);
     private final BorderPane root = new BorderPane();
     private final List<FilterObject> filters = new ArrayList<>();
@@ -93,6 +96,7 @@ public class UIMain extends Application {
             menuConvert.enable();
             menuCount.enable();
             menuDelete.enable();
+            menuReload.enable();
             menuDump.enable();
             menuFilter.enable();
         } else {
@@ -100,6 +104,7 @@ public class UIMain extends Application {
             menuCount.disable();
             menuDelete.disable();
             menuDump.disable();
+            menuReload.disable();
             menuFilter.disable();
         }
     }
@@ -259,7 +264,7 @@ public class UIMain extends Application {
     }
 
     private @NotNull MenuBar createMenu() {
-        return new MenuBar(menuOpen, menuDelete, menuCount, menuFilter, menuConvert, menuDump);
+        return new MenuBar(menuOpen, menuReload, menuDelete, menuCount, menuFilter, menuConvert, menuDump);
     }
 
     @Override
@@ -271,4 +276,12 @@ public class UIMain extends Application {
         primaryStage.setOnCloseRequest(e -> AppLauncher.exitApplication());
         primaryStage.show();
     }
+
+    private void reload() {
+        selectedItem.get().reload();
+        var tmp = selectedItem.get();
+        selectedItem.setValue(null);
+        selectedItem.setValue(tmp);
+    }
+
 }
