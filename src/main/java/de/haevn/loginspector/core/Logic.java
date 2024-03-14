@@ -1,7 +1,7 @@
-package core;
+package de.haevn.loginspector.core;
 
 import de.haevn.utils.Tokenizer;
-import model.LogEntry;
+import de.haevn.loginspector.model.LogEntry;
 
 import java.io.File;
 import java.io.IOException;

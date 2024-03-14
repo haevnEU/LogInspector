@@ -1,6 +1,8 @@
+package de.haevn.loginspector;
+
 import de.haevn.utils.AppLauncher;
-import tui.CliMain;
-import ui.UIMain;
+import de.haevn.loginspector.tui.CliMain;
+import de.haevn.loginspector.ui.UIMain;
 
 import java.util.Arrays;
 
@@ -17,9 +19,8 @@ public class Launcher extends AppLauncher {
 
     @Override
     public void setup(String... args) {
-        super.enableDebug();
-        Arrays.stream(args).filter(arg -> arg.equalsIgnoreCase("--ui")).findAny().ifPresent(arg -> UIMain.main(args));
-        Arrays.stream(args).filter(arg -> arg.equalsIgnoreCase("--cli")).findAny().ifPresent(arg -> CliMain.main(args));
+        Arrays.stream(args).filter(arg -> arg.equalsIgnoreCase("--debug")).findAny().ifPresent(arg -> super.enableDebug());
+        UIMain.main(args);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package ui;
+package de.haevn.loginspector;
 
 import javafx.scene.layout.BorderPane;
 

@@ -1,12 +1,7 @@
-package model;
+package de.haevn.loginspector.model;
 
 import de.haevn.utils.io.SerializationUtils;
 import de.haevn.utils.logging.SanitizedLogEntry;
-
-import java.io.Serial;
-import java.util.Arrays;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * This class represents a log entry
@@ -33,7 +28,7 @@ public record LogEntry(String date, String level, String source, String method, 
      * <b>Exmaple</b>
      * <pre>
      * {@code
-     * Example: [Dez. 12,2023 19:15:39] [INFO] [Test.java:39] [de.haevn.app.core.Test#update] [] This is a testsource
+     * Example: [Dez. 12,2023 19:15:39] [INFO] [Test.java:39] [de.haevn.app.de.haevn.loginspector.core.Test#update] [] This is a testsource
      * }
      * </pre>
      *

@@ -1,10 +1,11 @@
-package ui;
+package de.haevn.loginspector;
 
 import de.haevn.jfx.tools.creation.elements.ButtonCreator;
 import de.haevn.jfx.tools.creation.elements.TextInputCreator;
 import de.haevn.jfx.tools.creation.pane.BorderPaneCreator;
 import de.haevn.jfx.tools.creation.pane.FormCreator;
 import de.haevn.jfx.tools.creation.pane.TabPaneCreator;
+import de.haevn.loginspector.ui.UIMain;
 import de.haevn.utils.StringUtils;
 import javafx.scene.Scene;
 import javafx.scene.control.Tab;
@@ -14,7 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import model.LogEntry;
+import de.haevn.loginspector.model.LogEntry;
 
 
 public class EntryView {

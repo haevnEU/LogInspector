@@ -1,8 +1,11 @@
-package ui;
+package de.haevn.loginspector.ui;
 
-import core.Logic;
+import de.haevn.loginspector.core.Logic;
 import de.haevn.jfx.elements.Toast;
 import de.haevn.jfx.elements.menu.ClickableMenu;
+import de.haevn.loginspector.EntryView;
+import de.haevn.loginspector.OpenedFiles;
+import de.haevn.loginspector.TableWidget;
 import de.haevn.utils.AppLauncher;
 import de.haevn.utils.StringUtils;
 import javafx.application.Application;
@@ -18,8 +21,8 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import model.FilterObject;
-import model.LogEntry;
+import de.haevn.loginspector.model.FilterObject;
+import de.haevn.loginspector.model.LogEntry;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

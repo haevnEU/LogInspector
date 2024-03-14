@@ -1,22 +1,20 @@
-package ui;
+package de.haevn.loginspector;
 
 
-import core.Logic;
+import de.haevn.loginspector.core.Logic;
 
 import de.haevn.jfx.html.H;
 import javafx.beans.property.ReadOnlyObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
 import javafx.util.Callback;
-import model.FilterObject;
-import model.LogEntry;
+import de.haevn.loginspector.model.FilterObject;
+import de.haevn.loginspector.model.LogEntry;
 
 import java.util.ArrayList;
 import java.util.List;

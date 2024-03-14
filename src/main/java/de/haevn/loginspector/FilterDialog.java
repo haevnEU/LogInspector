@@ -1,4 +1,4 @@
-package ui;
+package de.haevn.loginspector;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.Scene;
@@ -6,10 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import model.FilterObject;
-import model.LogEntry;
-
-import java.util.function.Predicate;
+import de.haevn.loginspector.model.FilterObject;
 
 public class FilterDialog {
     private final Stage stage;

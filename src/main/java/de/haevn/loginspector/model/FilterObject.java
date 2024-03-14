@@ -1,4 +1,4 @@
-package model;
+package de.haevn.loginspector.model;
 
 import java.util.function.Predicate;
 

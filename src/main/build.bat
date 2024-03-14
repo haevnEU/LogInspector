@@ -1,0 +1,2 @@
+mv target/LogInspector-1.2-jar-with-dependencies.jar bin/
+jpackage --input bin/ --name LogInspector --main-jar LogInspector-1.2-jar-with-dependencies.jar --main-class de.haevn.loginspector.Launcher --type app-image
