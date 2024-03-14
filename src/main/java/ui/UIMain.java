@@ -11,6 +11,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -270,6 +271,7 @@ public class UIMain extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Log Viewer");
+        primaryStage.getIcons().add(new Image(UIMain.class.getResourceAsStream("/icons/main_icon.png")));
         Toast.initialize(primaryStage);
         primaryStage.setScene(new Scene(root, 1200, 900));
         setStyle(primaryStage);
