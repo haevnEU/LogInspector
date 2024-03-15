@@ -58,6 +58,31 @@
                 </executions>
             </plugin>
 
+            <!--
+                This is plugin wraps the jpackage command.
+                It will create a native installer for the application or a platform-specific package.
+                IMPORTANT: This plugin is private and not available in the Maven Central Repository,
+                therefore you have two options, either request the plugin or remove it from the pom.xml file.1
+            -->
+            <plugin>
+            <groupId>de.haevn</groupId>
+            <artifactId>JPackager</artifactId>
+            <version>1.0</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>jpackage</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <mainClass>de.haevn.loginspector.Launcher</mainClass>
+                <type>app-image</type>
+                <name>LogInspector</name>
+            </configuration>
+        </plugin>
+
+
         </plugins>
     </build>
 </project>
