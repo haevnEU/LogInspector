@@ -40,7 +40,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>de.haevn.loginspector.Launcher</mainClass>
+                            <mainClass>de.haevn.loginspector.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -65,22 +65,23 @@
                 therefore you have two options, either request the plugin or remove it from the pom.xml file.1
             -->
             <plugin>
-            <groupId>de.haevn</groupId>
-            <artifactId>JPackager</artifactId>
-            <version>1.0</version>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>jpackage</goal>
-                    </goals>
-                </execution>
-            </executions>
-            <configuration>
-                <mainClass>de.haevn.loginspector.Launcher</mainClass>
-                <type>app-image</type>
-                <name>LogInspector</name>
-            </configuration>
-        </plugin>
+                <groupId>de.haevn</groupId>
+                <artifactId>JPackager</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jpackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>de.haevn.loginspector.Main</mainClass>
+                    <type>app-image</type>
+                    <name>LogInspector</name>
+                    <config>./config</config>
+                </configuration>
+            </plugin>
 
 
         </plugins>

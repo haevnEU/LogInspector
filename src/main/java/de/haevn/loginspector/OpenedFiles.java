@@ -1,8 +1,8 @@
 package de.haevn.loginspector;
 
-import de.haevn.loginspector.core.Logic;
 import de.haevn.jfx.elements.Toast;
-import de.haevn.utils.io.FileIO;
+import de.haevn.loginspector.core.Logic;
+import de.haevn.utils.io.file.FileUtils;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.geometry.Insets;
@@ -27,11 +27,11 @@ public class OpenedFiles extends ListView<Logic> {
         });
     }
 
-    public void openFiles(){
+    public void openFiles() {
 
         final FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Log File");
-        fileChooser.setInitialDirectory(new File(FileIO.getUserHomeWithSeparator() + "haevn"));
+        fileChooser.setInitialDirectory(new File(FileUtils.getUserHomeWithSeparator() + "haevn"));
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Log Files", "*.log"),
                 new FileChooser.ExtensionFilter("All Files", "*.*"));
@@ -44,13 +44,14 @@ public class OpenedFiles extends ListView<Logic> {
                 final Logic logic = new Logic();
                 try {
                     logic.load(file.getAbsolutePath());
-                } catch (IOException ignored) {}
-                if(getItems().stream().filter(item -> item.toString().equalsIgnoreCase(logic.toString())).findFirst().isEmpty()) {
+                } catch (IOException ignored) {
+                }
+                if (getItems().stream().filter(item -> item.toString().equalsIgnoreCase(logic.toString())).findFirst().isEmpty()) {
                     getItems().add(logic);
                     loadedFiles.incrementAndGet();
                     entries.addAndGet(logic.count());
-                }else{
-                    Toast.bad("File " + logic.toString() + "  already loaded");
+                } else {
+                    Toast.bad("File " + logic + "  already loaded");
                 }
             });
             Toast.good("Loaded " + loadedFiles + " files " + entries + " entries");
