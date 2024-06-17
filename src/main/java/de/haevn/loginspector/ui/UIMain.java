@@ -1,12 +1,10 @@
 package de.haevn.loginspector.ui;
 
-import de.haevn.loginspector.core.Logic;
 import de.haevn.jfx.elements.Toast;
 import de.haevn.jfx.elements.menu.ClickableMenu;
-import de.haevn.loginspector.EntryView;
-import de.haevn.loginspector.OpenedFiles;
-import de.haevn.loginspector.TableWidget;
-import de.haevn.utils.AppLauncher;
+import de.haevn.loginspector.core.Logic;
+import de.haevn.loginspector.model.FilterObject;
+import de.haevn.loginspector.model.LogEntry;
 import de.haevn.utils.StringUtils;
 import javafx.application.Application;
 import javafx.beans.property.SimpleObjectProperty;
@@ -21,8 +19,6 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import de.haevn.loginspector.model.FilterObject;
-import de.haevn.loginspector.model.LogEntry;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -39,7 +35,7 @@ public class UIMain extends Application {
     final ClickableMenu menuOpen = new ClickableMenu("Open", openedFilesListWidget::openFiles);
     final ClickableMenu menuDelete = new ClickableMenu("Delete", this::delete).withDisabled();
     final ClickableMenu menuFilter = new ClickableMenu("Filter", this::filter).withDisabled();
-   final ClickableMenu menuReload = new ClickableMenu("Reload", this::reload).withDisabled();
+    final ClickableMenu menuReload = new ClickableMenu("Reload", this::reload).withDisabled();
 
 
     private final TableWidget table = new TableWidget(selectedItem);
@@ -72,7 +68,7 @@ public class UIMain extends Application {
                 .addColumn("Thread", p -> new SimpleStringProperty(StringUtils.trimStringTo(p.getValue().thread(), 64)))
                 .addColumn("Message", p -> new SimpleStringProperty(StringUtils.trimStringTo(p.getValue().message(), 64)))
                 .addColumn("Object", p -> new SimpleStringProperty(StringUtils.trimStringTo(p.getValue().object(), 64)))
-                .addColumn("Throwable", p -> new SimpleStringProperty(StringUtils.splitSecure(p.getValue().throwable(),0, ':')));
+                .addColumn("Throwable", p -> new SimpleStringProperty(StringUtils.splitSecure(p.getValue().throwable(), 0, ':')));
 
 
         table.addOnSelectItemChanged(EntryView::showEntry);
@@ -236,8 +232,7 @@ public class UIMain extends Application {
         if (null == selectedItem.get()) {
             Toast.bad("No entries loaded");
             return;
-        }
-        else if(0 == selectedItem.get().count()){
+        } else if (0 == selectedItem.get().count()) {
             Toast.warn("No entries found in " + selectedItem.get().getName());
             return;
         }
@@ -278,7 +273,7 @@ public class UIMain extends Application {
         Toast.initialize(primaryStage);
         primaryStage.setScene(new Scene(root, 1200, 900));
         setStyle(primaryStage);
-        primaryStage.setOnCloseRequest(e -> AppLauncher.exitApplication());
+        primaryStage.setOnCloseRequest(e -> System.exit(0));
         primaryStage.show();
     }
 

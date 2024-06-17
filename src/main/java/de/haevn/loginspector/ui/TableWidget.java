@@ -1,9 +1,10 @@
-package de.haevn.loginspector;
+package de.haevn.loginspector.ui;
 
-
-import de.haevn.loginspector.core.Logic;
 
 import de.haevn.jfx.html.H;
+import de.haevn.loginspector.core.Logic;
+import de.haevn.loginspector.model.FilterObject;
+import de.haevn.loginspector.model.LogEntry;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -13,8 +14,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
 import javafx.util.Callback;
-import de.haevn.loginspector.model.FilterObject;
-import de.haevn.loginspector.model.LogEntry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +26,7 @@ public class TableWidget extends GridPane {
     private final StringProperty summary = new SimpleStringProperty("Noth ing loaded");
 
     private final StringProperty title = new SimpleStringProperty("N/A");
+
     public TableWidget(final ReadOnlyObjectProperty<Logic> logEntry) {
         final H title = H.ofH1("N/A");
         final Label summary = new Label("Nothing loaded");
@@ -81,7 +81,6 @@ public class TableWidget extends GridPane {
     public void filter() {
         filter(currentFilterList);
     }
-
 
 
     private void logFileChanged(ObservableValue<? extends Logic> observableValue, Logic oldValue, Logic newValue) {

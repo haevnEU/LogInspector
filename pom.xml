@@ -9,25 +9,25 @@
     <version>1.2</version>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>22</maven.compiler.source>
+        <maven.compiler.target>22</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 
-        <version.haevn.utils>1.2</version.haevn.utils>
-        <version.haevn.jfx>1.2</version.haevn.jfx>
+        <version.haevn.utils>2.0</version.haevn.utils>
+        <version.haevn.jfx>2.0</version.haevn.jfx>
 
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>de.haevn</groupId>
-            <artifactId>Utility</artifactId>
+            <artifactId>utilsCore</artifactId>
             <version>${version.haevn.utils}</version>
         </dependency>
         <dependency>
             <groupId>de.haevn</groupId>
-            <artifactId>JavaFXUtility</artifactId>
+            <artifactId>jfxUtilsCore</artifactId>
             <version>${version.haevn.jfx}</version>
         </dependency>
     </dependencies>

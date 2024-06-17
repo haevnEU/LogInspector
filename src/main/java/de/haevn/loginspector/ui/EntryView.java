@@ -1,11 +1,11 @@
-package de.haevn.loginspector;
+package de.haevn.loginspector.ui;
 
 import de.haevn.jfx.tools.creation.elements.ButtonCreator;
 import de.haevn.jfx.tools.creation.elements.TextInputCreator;
 import de.haevn.jfx.tools.creation.pane.BorderPaneCreator;
 import de.haevn.jfx.tools.creation.pane.FormCreator;
 import de.haevn.jfx.tools.creation.pane.TabPaneCreator;
-import de.haevn.loginspector.ui.UIMain;
+import de.haevn.loginspector.model.LogEntry;
 import de.haevn.utils.StringUtils;
 import javafx.scene.Scene;
 import javafx.scene.control.Tab;
@@ -15,7 +15,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import de.haevn.loginspector.model.LogEntry;
 
 
 public class EntryView {
@@ -65,7 +64,7 @@ public class EntryView {
         return buttons;
     }
 
-    private TabPane createCenter(){
+    private TabPane createCenter() {
         final TabPane tabPane = new TabPane();
         tabPane.getTabs().addAll(
                 createTab("Message", entry.message()),
@@ -84,14 +83,14 @@ public class EntryView {
     }
 
     public void show() {
-        if(null == entry) return;
-        if(stage.isShowing()) return;
+        if (null == entry) return;
+        if (stage.isShowing()) return;
         stage.show();
     }
 
 
     private Tab createTab(final String title, final String content) {
         final TextArea contentArea = TextInputCreator.startTextArea(content).withReadonly().buildTextArea();
-       return new TabPaneCreator.TabBuilder().withContent(contentArea).withClosable(false).withTitle(title).build();
+        return new TabPaneCreator.TabBuilder().withContent(contentArea).withClosable(false).withTitle(title).build();
     }
 }

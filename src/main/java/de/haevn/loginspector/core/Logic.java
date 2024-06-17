@@ -1,7 +1,7 @@
 package de.haevn.loginspector.core;
 
-import de.haevn.utils.Tokenizer;
 import de.haevn.loginspector.model.LogEntry;
+import de.haevn.utils.system.Tokenizer;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,8 +19,8 @@ public class Logic {
     public void load(final String logFile) throws IOException {
         logEntries.clear();
         logEntries.addAll(Files.readAllLines(new File(logFile).toPath()).stream().map(LogEntry::getEntryFromLine).toList().stream().filter(Objects::nonNull)
-                .filter(e->e.level() != null && !e.level().isEmpty())
-                .filter(e->e.date() != null && !e.date().isEmpty())
+                .filter(e -> e.level() != null && !e.level().isEmpty())
+                .filter(e -> e.date() != null && !e.date().isEmpty())
                 .toList());
         file = new File(logFile);
         name = file.getName();
@@ -30,7 +30,8 @@ public class Logic {
         if (logEntries.isEmpty()) {
             return List.of();
         }
-        var tokenPair = Tokenizer.getInstance("=").tokenize(query);
+        final Tokenizer tk = new Tokenizer("=");
+        var tokenPair = tk.tokenize(query);
 
         Predicate<LogEntry> filterPredicate = entry -> switch (tokenPair.getFirst().toLowerCase()) {
             case "thread" -> entry.thread().toLowerCase().contains(tokenPair.getSecond().toLowerCase());

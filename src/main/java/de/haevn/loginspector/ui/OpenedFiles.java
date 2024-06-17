@@ -1,8 +1,8 @@
-package de.haevn.loginspector;
+package de.haevn.loginspector.ui;
 
 import de.haevn.jfx.elements.Toast;
 import de.haevn.loginspector.core.Logic;
-import de.haevn.utils.io.file.FileUtils;
+import de.haevn.utils.io.FileUtils;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.geometry.Insets;

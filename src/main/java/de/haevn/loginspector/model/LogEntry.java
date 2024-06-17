@@ -1,6 +1,6 @@
 package de.haevn.loginspector.model;
 
-import de.haevn.utils.io.SerializationUtils;
+import de.haevn.utils.SerializationUtils;
 import de.haevn.utils.logging.SanitizedLogEntry;
 
 /**
@@ -13,7 +13,8 @@ import de.haevn.utils.logging.SanitizedLogEntry;
  * @param method  Method
  * @param message Message
  */
-public record LogEntry(String date, String level, String source, String method, String thread, String object, String throwable, String message) {
+public record LogEntry(String date, String level, String source, String method, String thread, String object,
+                       String throwable, String message) {
 
 
     /**
@@ -46,14 +47,15 @@ public record LogEntry(String date, String level, String source, String method, 
         return null;
     }
 
-    public String toCsvEntry(char separator){
-        return date + separator + level + separator + source + separator + method + separator + thread + separator + message + separator+ object + separator + throwable;
+    public String toCsvEntry(char separator) {
+        return date + separator + level + separator + source + separator + method + separator + thread + separator + message + separator + object + separator + throwable;
     }
-    public String toCsvEntry(){
+
+    public String toCsvEntry() {
         return toCsvEntry(';');
     }
 
-    public String toJson(){
+    public String toJson() {
         return "{\n" +
                 "  \"date\": \"" + date + "\",\n" +
                 "  \"level\": \"" + level + "\",\n" +
