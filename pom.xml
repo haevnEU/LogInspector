@@ -14,8 +14,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 
-        <version.haevn.utils>2.0</version.haevn.utils>
-        <version.haevn.jfx>2.0</version.haevn.jfx>
+        <version.haevn.utils>2.1</version.haevn.utils>
+        <version.haevn.jfx>2.1</version.haevn.jfx>
 
     </properties>
 
@@ -28,6 +28,11 @@
         <dependency>
             <groupId>de.haevn</groupId>
             <artifactId>jfxUtilsCore</artifactId>
+            <version>${version.haevn.jfx}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.haevn</groupId>
+            <artifactId>html</artifactId>
             <version>${version.haevn.jfx}</version>
         </dependency>
     </dependencies>
