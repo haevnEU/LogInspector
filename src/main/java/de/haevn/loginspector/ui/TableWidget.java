@@ -1,21 +1,19 @@
-package ui;
+package de.haevn.loginspector.ui;
 
 
-import core.Logic;
-import de.haevn.jfx.html.H1;
+import de.haevn.jfx.html.H;
+import de.haevn.loginspector.core.Logic;
+import de.haevn.loginspector.model.FilterObject;
+import de.haevn.loginspector.model.LogEntry;
 import javafx.beans.property.ReadOnlyObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
 import javafx.util.Callback;
-import model.FilterObject;
-import model.LogEntry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +26,9 @@ public class TableWidget extends GridPane {
     private final StringProperty summary = new SimpleStringProperty("Noth ing loaded");
 
     private final StringProperty title = new SimpleStringProperty("N/A");
+
     public TableWidget(final ReadOnlyObjectProperty<Logic> logEntry) {
-        final H1 title = new H1("N/A");
+        final H title = H.ofH1("N/A");
         final Label summary = new Label("Nothing loaded");
         title.textProperty().bind(this.title);
         summary.textProperty().bind(this.summary);
@@ -82,7 +81,6 @@ public class TableWidget extends GridPane {
     public void filter() {
         filter(currentFilterList);
     }
-
 
 
     private void logFileChanged(ObservableValue<? extends Logic> observableValue, Logic oldValue, Logic newValue) {

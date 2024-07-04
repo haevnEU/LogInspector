@@ -1,12 +1,7 @@
-package model;
+package de.haevn.loginspector.model;
 
-import de.haevn.utils.io.SerializationUtils;
+import de.haevn.utils.SerializationUtils;
 import de.haevn.utils.logging.SanitizedLogEntry;
-
-import java.io.Serial;
-import java.util.Arrays;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * This class represents a log entry
@@ -18,7 +13,8 @@ import java.util.regex.Pattern;
  * @param method  Method
  * @param message Message
  */
-public record LogEntry(String date, String level, String source, String method, String thread, String object, String throwable, String message) {
+public record LogEntry(String date, String level, String source, String method, String thread, String object,
+                       String throwable, String message) {
 
 
     /**
@@ -33,7 +29,7 @@ public record LogEntry(String date, String level, String source, String method, 
      * <b>Exmaple</b>
      * <pre>
      * {@code
-     * Example: [Dez. 12,2023 19:15:39] [INFO] [Test.java:39] [de.haevn.app.core.Test#update] [] This is a testsource
+     * Example: [Dez. 12,2023 19:15:39] [INFO] [Test.java:39] [de.haevn.app.de.haevn.loginspector.core.Test#update] [] This is a testsource
      * }
      * </pre>
      *
@@ -51,14 +47,15 @@ public record LogEntry(String date, String level, String source, String method, 
         return null;
     }
 
-    public String toCsvEntry(char separator){
-        return date + separator + level + separator + source + separator + method + separator + thread + separator + message + separator+ object + separator + throwable;
+    public String toCsvEntry(char separator) {
+        return date + separator + level + separator + source + separator + method + separator + thread + separator + message + separator + object + separator + throwable;
     }
-    public String toCsvEntry(){
+
+    public String toCsvEntry() {
         return toCsvEntry(';');
     }
 
-    public String toJson(){
+    public String toJson() {
         return "{\n" +
                 "  \"date\": \"" + date + "\",\n" +
                 "  \"level\": \"" + level + "\",\n" +

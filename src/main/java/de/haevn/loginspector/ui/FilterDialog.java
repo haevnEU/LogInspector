@@ -1,15 +1,12 @@
-package ui;
+package de.haevn.loginspector.ui;
 
+import de.haevn.loginspector.model.FilterObject;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import model.FilterObject;
-import model.LogEntry;
-
-import java.util.function.Predicate;
 
 public class FilterDialog {
     private final Stage stage;
@@ -37,14 +34,10 @@ public class FilterDialog {
         final TextField throwableField = addFormEntry("Throwable", root, 8, "", throwable);
 
 
-
-
         final Scene scene = new Scene(root, 800, 600);
         stage = new Stage();
         stage.setScene(scene);
     }
-
-
 
 
     public void show(final FilterObject filter) {
