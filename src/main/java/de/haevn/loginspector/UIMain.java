@@ -1,10 +1,13 @@
-package de.haevn.loginspector.ui;
+package de.haevn.loginspector;
 
 import de.haevn.jfx.elements.Toast;
 import de.haevn.jfx.elements.menu.ClickableMenu;
 import de.haevn.loginspector.core.Logic;
 import de.haevn.loginspector.model.FilterObject;
 import de.haevn.loginspector.model.LogEntry;
+import de.haevn.loginspector.ui.EntryView;
+import de.haevn.loginspector.ui.OpenedFiles;
+import de.haevn.loginspector.ui.TableWidget;
 import de.haevn.utils.StringUtils;
 import javafx.application.Application;
 import javafx.beans.property.SimpleObjectProperty;

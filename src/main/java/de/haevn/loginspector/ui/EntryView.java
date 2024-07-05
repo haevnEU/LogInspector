@@ -5,6 +5,7 @@ import de.haevn.jfx.tools.creation.elements.TextInputCreator;
 import de.haevn.jfx.tools.creation.pane.BorderPaneCreator;
 import de.haevn.jfx.tools.creation.pane.FormCreator;
 import de.haevn.jfx.tools.creation.pane.TabPaneCreator;
+import de.haevn.loginspector.UIMain;
 import de.haevn.loginspector.model.LogEntry;
 import de.haevn.utils.StringUtils;
 import javafx.beans.property.SimpleObjectProperty;

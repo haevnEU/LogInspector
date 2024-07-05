@@ -1,9 +1,9 @@
 package de.haevn.loginspector;
 
 
-import de.haevn.loginspector.ui.UIMain;
+import de.haevn.annotations.Launcher;
 
-@de.haevn.annotations.Launcher(name = "LogInspector")
+@Launcher(name = "LogInspector")
 public interface Main {
     static void main(String[] args) {
         UIMain.main(args);
